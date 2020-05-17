@@ -4,11 +4,11 @@ import Item from "./Item/Item";
 export default function ListContainer() {
   const container = document.createElement("ul");
 
-  const appendItem = (item) => container.appendChild(item);
+  const appendItem = (newItem) => container.appendChild(newItem);
 
-  const createItem = (text) => Item(text);
+  const createItem = ({ text, id }) => Item(text, id);
 
-  const addItem = (text) => appendItem(createItem(text));
+  const addItem = (item) => appendItem(createItem(item));
 
   const update = (list) => list.map(addItem);
 

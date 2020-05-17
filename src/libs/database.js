@@ -10,8 +10,7 @@ const save = (key, value) => {
 const load = (key) => {
   try {
     const rawValue = localStorage.getItem(key);
-
-    return rawValue ? JSON.parse(rawValue) : [];
+    return JSON.parse(rawValue);
   } catch (error) {
     console.warn(error);
   }
